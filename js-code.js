@@ -92,14 +92,3 @@ const addaMult = (num) => {
 
 const addTwoMultiplyByThree = addaMult(2)(3);
 console.log(addTwoMultiplyByThree(10));
-
-// const AddAMult = (NumToAdd) => {
-// 	return (NumToMult) => {
-// 		return (num) => {
-// 			return (num + NumToAdd) * NumToMult;
-// 		};
-// 	};
-// };
-
-// const addTwoMultiplyByThree = AddAMult(2)(3);
-// console.log(addTwoMultiplyByThree(10));
