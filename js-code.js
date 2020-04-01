@@ -52,10 +52,54 @@ require('./js-code.js');
 
 // makeChange(25);
 
-const addPrefix = (prefix) => {
-	return function(name) {
-		return console.log(`Hello ${prefix} ${name}`);
+// const addPrefix = (prefix) => {
+// 	return function(name) {
+// 		return console.log(`Hello ${prefix} ${name}`);
+// 	};
+// };
+
+// addPrefix('Sir')('Luke');
+
+// const soundMaker = (sound) => {
+// 	return function(animal) {
+// 		return console.log(`${animal} goes ${sound}`);
+// 	};
+// };
+
+// soundMaker('roar')('lion');
+// const lionSound = soundMaker('roar');
+// lionSound('lion');
+
+function nameEnhancer(prefix) {
+	return function(suffix) {
+		return function(name) {
+			return `${prefix} ${name} ${suffix}`;
+		};
+	};
+}
+const misterJunior = nameEnhancer('Mister')('Junior');
+const duchessThird = nameEnhancer('Duchess')('The Third');
+console.log(misterJunior('john'));
+duchessThird('Elizabeth');
+
+const addaMult = (num) => {
+	return (num1) => {
+		return (num2) => {
+			return (num + num2) * num1;
+		};
 	};
 };
 
-addPrefix('Sir')('Luke');
+const addTwoMultiplyByThree = addaMult(2)(3);
+console.log(addTwoMultiplyByThree(10));
+
+// const AddAMult = (NumToAdd) => {
+// 	return (NumToMult) => {
+// 		return (num) => {
+// 			return (num + NumToAdd) * NumToMult;
+// 		};
+// 	};
+// };
+
+// const addTwoMultiplyByThree = AddAMult(2)(3);
+// console.log(addTwoMultiplyByThree(10));
