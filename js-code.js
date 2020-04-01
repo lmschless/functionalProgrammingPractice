@@ -1,7 +1,7 @@
 require('./js-code.js');
 
 // new linter can see that let is not allowed
-console.log('Coin Counter App');
+// console.log('Coin Counter App');
 // const coinCounter = (amount, quarters = 0, dimes = 0, nickels = 0, pennies = 0) => {
 // 	if (isNaN(amount)) {
 // 		return;
@@ -29,25 +29,33 @@ console.log('Coin Counter App');
 
 // coinCounter(423);
 
-function makeChange(amount) {
-	const quarters = 0;
-	function end() {
-		if (amount == 0) {
-			console.log('finished');
-			return;
-		}
-	}
-	function addQuarter() {
-		if (amount >= 25) {
-			quarters++;
-			return amount - 25;
-		}
-		// function addDime() {
-		// 	function addNickel() {
-		// 		function addPenny() {}
-		// 	}
-		// }
-	}
-}
+// function makeChange(amount) {
+// 	const quarters = 0;
+// 	function end() {
+// 		if (amount == 0) {
+// 			console.log('finished');
+// 			return;
+// 		}
+// 	}
+// 	function addQuarter() {
+// 		if (amount >= 25) {
+// 			quarters++;
+// 			return amount - 25;
+// 		}
+// 		// function addDime() {
+// 		// 	function addNickel() {
+// 		// 		function addPenny() {}
+// 		// 	}
+// 		// }
+// 	}
+// }
 
-makeChange(25);
+// makeChange(25);
+
+const addPrefix = (prefix) => {
+	return function(name) {
+		return console.log(`Hello ${prefix} ${name}`);
+	};
+};
+
+addPrefix('Sir')('Luke');
