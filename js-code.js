@@ -1,33 +1,34 @@
 require('./js-code.js');
 
 // new linter can see that let is not allowed
-// console.log('Coin Counter App');
-// const coinCounter = (amount, quarters = 0, dimes = 0, nickels = 0, pennies = 0) => {
-// 	if (isNaN(amount)) {
-// 		return;
-// 	}
-// 	if (amount == 0) {
-// 		return console.log(`finished! Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}`);
-// 	}
-// 	if (amount >= 25) {
-// 		console.log('quarter');
-// 		return coinCounter(amount - 25, quarters + 1);
-// 	}
-// 	if (amount >= 10) {
-// 		console.log('dime');
-// 		return coinCounter(amount - 10, quarters, dimes + 1);
-// 	}
-// 	if (amount >= 5) {
-// 		return coinCounter(amount - 5, quarters, dimes, nickels + 1);
-// 	}
-// 	if (amount < 5) {
-// 		return coinCounter(amount - 1, quarters, dimes, nickels, pennies + 1);
-// 	} else {
-// 		return;
-// 	}
-// };
+console.log('Coin Counter App');
 
-// coinCounter(423);
+const coinCounter = (amount, quarters = 0, dimes = 0, nickels = 0, pennies = 0) => {
+	if (isNaN(amount)) {
+		return;
+	}
+	if (amount == 0) {
+		return console.log(`finished! Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}`);
+	}
+	if (amount >= 25) {
+		// console.log('quarter');
+		return coinCounter(amount - 25, quarters + 1);
+	}
+	if (amount >= 10) {
+		console.log('dime');
+		return coinCounter(amount - 10, quarters, dimes + 1);
+	}
+	if (amount >= 5) {
+		return coinCounter(amount - 5, quarters, dimes, nickels + 1);
+	}
+	if (amount < 5) {
+		return coinCounter(amount - 1, quarters, dimes, nickels, pennies + 1);
+	} else {
+		return;
+	}
+};
+
+coinCounter(433);
 
 // function makeChange(amount) {
 // 	const quarters = 0;
@@ -70,25 +71,25 @@ require('./js-code.js');
 // const lionSound = soundMaker('roar');
 // lionSound('lion');
 
-function nameEnhancer(prefix) {
-	return function(suffix) {
-		return function(name) {
-			return `${prefix} ${name} ${suffix}`;
-		};
-	};
-}
-const misterJunior = nameEnhancer('Mister')('Junior');
-const duchessThird = nameEnhancer('Duchess')('The Third');
-console.log(misterJunior('john'));
-duchessThird('Elizabeth');
+// function nameEnhancer(prefix) {
+// 	return function(suffix) {
+// 		return function(name) {
+// 			return `${prefix} ${name} ${suffix}`;
+// 		};
+// 	};
+// }
+// const misterJunior = nameEnhancer('Mister')('Junior');
+// const duchessThird = nameEnhancer('Duchess')('The Third');
+// console.log(misterJunior('john'));
+// duchessThird('Elizabeth');
 
-const addaMult = (num) => {
-	return (num1) => {
-		return (num2) => {
-			return (num + num2) * num1;
-		};
-	};
-};
+// const addaMult = (num) => {
+// 	return (num1) => {
+// 		return (num2) => {
+// 			return (num + num2) * num1;
+// 		};
+// 	};
+// };
 
-const addTwoMultiplyByThree = addaMult(2)(3);
-console.log(addTwoMultiplyByThree(10));
+// const addTwoMultiplyByThree = addaMult(2)(3);
+// console.log(addTwoMultiplyByThree(10));
