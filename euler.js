@@ -1,15 +1,16 @@
 require('./euler.js');
 
 const sumMultiples = (num = 1, sum = 0) => {
-	if (num == 15) {
-		console.log(num, sum);
+	if (num == 25) {
+		console.log(`Finished! -- num: ${num}, sum: ${sum}`);
 		return;
 	}
 	if (num % 3 == 0 || num % 5 == 0) {
 		console.log(`num: ${num}, sum: ${sum}`);
-		return sumMultiples(num + 1, sum + num);
+		sum = sum + num;
+		return sumMultiples(num + 1, sum);
 	} else {
-		return sumMultiples(num + 1);
+		return sumMultiples(num + 1, sum);
 	}
 };
 
